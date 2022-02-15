@@ -24,6 +24,6 @@ export function renderPicture(pictures) {
                         </p>
                     </div>
                     </div>`
-       })
+       }).join("")
         refs.gallery.insertAdjacentHTML('afterbegin', markUp);
        }
