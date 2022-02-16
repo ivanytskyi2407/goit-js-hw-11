@@ -4,7 +4,6 @@ import { axiosPicture } from './js/axiosPicture'
 import { renderPicture } from "./js/renderPicture";
 import { refs } from "./js/refs";
 
-
 refs.formRef.addEventListener('submit', onInputSearch);
 
 function onInputSearch(event) {

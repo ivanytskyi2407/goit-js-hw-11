@@ -32,9 +32,6 @@ export function renderPicture(pictures) {
       })
       .join('');
     refs.gallery.insertAdjacentHTML('afterbegin', markUp);
-
-    let gallery = new SimpleLightbox('.gallery a', {
-        captionDelay: 250,
-       });
+    let gallery = new SimpleLightbox('.gallery a', {});
 }
        
