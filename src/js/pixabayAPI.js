@@ -6,7 +6,7 @@ export default class NewPixabayAPI {
     this.page = 1;
   }
   async axiosPicture() {
-    console.log(this);
+    // console.log(this);
     const API_KEY = '25715337-58cde3c0d1b1902de73779f35';
     const BASE_URL = 'https://pixabay.com/api';
 
