@@ -9,7 +9,8 @@ export function renderPicture(pictures) {
             Notify.failure("Sorry, there are no images matching your search query. Please try again.");
     }
     console.log(pictures);
-    const markUp = pictures.hits.map(({largeImageURL,webformatURL,tags,likes,views,comments,downloads}) => { 
+    const markUp = pictures.hits
+      .map(({ largeImageURL, webformatURL, tags, likes, views, comments, downloads }) => {
         return `<a href="${largeImageURL}">
         <div class="photo-card">
                     <img class="photo-card_img" src="${webformatURL}" alt="${tags}" loading="lazy"/>
@@ -27,8 +28,9 @@ export function renderPicture(pictures) {
                         <b>Downloads ${downloads}</b>
                         </p>
                     </div>
-                    </div></a>`
-       }).join("")
+                    </div></a>`;
+      })
+      .join('');
     refs.gallery.insertAdjacentHTML('afterbegin', markUp);
 
     let gallery = new SimpleLightbox('.gallery a', {

@@ -5,3 +5,4 @@ export function axiosPicture(name) {
   return axios.get(`https://pixabay.com/api/?key=${API_KEY}&q=${name}&image_type=photo&orientation=horizontal&safesearch=true`)
     .then(response => response.data)
 }
+
