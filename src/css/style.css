@@ -19,20 +19,52 @@ p {
 
 a {
   text-decoration: none;
+  color: black;
+  margin: 20px;
 }
-/* .img {
-  
-} */
+
+.search-form {
+  padding: 10px;
+  background: rgba(0, 0, 0, 0);
+  margin-bottom: 50px;
+  width: 100%;
+  text-align: center;
+}
+.btn {
+  width: 100px;
+  height: 50px;
+  border-radius: 4px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+}
+.input {
+  width: 100%;
+  max-width: 450px;
+  height: 50px;
+  padding: 15px 16px;
+  color: rgba(65, 20, 224, 0);
+  color: black;
+  border: none;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  outline: none;
+}
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: -15px;
+  margin: -20px;
 }
 .photo-card {
   width: 400px;
   height: 300px;
-  margin: 15px;
 }
 .photo-card_img {
   display: block;
@@ -45,6 +77,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 5px;
 }
 .info-item:not(:last-child) {
   margin-right: 10px;

@@ -1,13 +1,17 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { refs } from "./refs";
 
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 export function renderPicture(pictures) {
             if (pictures.hits.length === 0) {
             Notify.failure("Sorry, there are no images matching your search query. Please try again.");
-        }
-    const markUp = pictures.hits.map(({webformatURL,tags,likes,views,comments,downloads}) => { 
-            return `<div class="photo-card">
+    }
+    console.log(pictures);
+    const markUp = pictures.hits.map(({largeImageURL,webformatURL,tags,likes,views,comments,downloads}) => { 
+        return `<a href="${largeImageURL}">
+        <div class="photo-card">
                     <img class="photo-card_img" src="${webformatURL}" alt="${tags}" loading="lazy"/>
                     <div class="info">
                         <p class="info-item">
@@ -23,7 +27,12 @@ export function renderPicture(pictures) {
                         <b>Downloads ${downloads}</b>
                         </p>
                     </div>
-                    </div>`
+                    </div></a>`
        }).join("")
-        refs.gallery.insertAdjacentHTML('afterbegin', markUp);
-       }
+    refs.gallery.insertAdjacentHTML('afterbegin', markUp);
+
+    let gallery = new SimpleLightbox('.gallery a', {
+        captionDelay: 250,
+       });
+}
+       
