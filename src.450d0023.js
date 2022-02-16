@@ -78,4 +78,4 @@ var t=arguments[3];function e(t){return(e="function"==typeof Symbol&&"symbol"==t
 },{"notiflix/build/notiflix-notify-aio":"MeeU","./refs":"VyiV","simplelightbox":"yx6k","simplelightbox/dist/simple-lightbox.min.css":"amqR"}],"Focm":[function(require,module,exports) {
 "use strict";require("./css/style.css");var e=require("notiflix/build/notiflix-notify-aio"),r=require("./js/axiosPicture"),i=require("./js/renderPicture"),s=require("./js/refs");function t(t){t.preventDefault();const u=t.currentTarget.elements.searchQuery.value.trim();s.refs.btnLoadMore.classList.remove("is-hidden"),(0,r.axiosPicture)(u).then(r=>{r&&e.Notify.success(`Hooray! We found ${r.totalHits} images.`),(0,i.renderPicture)(r)})}s.refs.formRef.addEventListener("submit",t);
 },{"./css/style.css":"amqR","notiflix/build/notiflix-notify-aio":"MeeU","./js/axiosPicture":"fDSX","./js/renderPicture":"x8wx","./js/refs":"VyiV"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-11/src.f6a3d86c.js.map
+//# sourceMappingURL=/goit-js-hw-11/src.450d0023.js.map
