@@ -31,6 +31,6 @@ export function renderPicture(pictures) {
                     </div></a>`;
     })
     .join('');
-  refs.gallery.insertAdjacentHTML('afterbegin', markUp);
-  let gallery = new SimpleLightbox('.gallery a', {});
+  refs.gallery.insertAdjacentHTML('beforeend', markUp);
+  let gallery = new SimpleLightbox('.gallery a');
 }

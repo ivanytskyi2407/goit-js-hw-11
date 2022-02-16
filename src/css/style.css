@@ -53,7 +53,7 @@ a {
   margin-right: auto;
   margin-top: 70px;
 }
-.is-hidden {
+/* .is-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -62,7 +62,7 @@ a {
   overflow: hidden;
   border: 0;
   clip: rect(0 0 0 0);
-}
+} */
 .input {
   width: 100%;
   max-width: 450px;
