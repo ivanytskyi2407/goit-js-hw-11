@@ -67,7 +67,7 @@ module.exports={version:"0.26.0"};
 },{"./utils":"S1cf","./helpers/bind":"EDTP","./core/Axios":"OvAf","./core/mergeConfig":"OHvn","./defaults":"BXyq","./cancel/Cancel":"mIKj","./cancel/CancelToken":"tsWd","./cancel/isCancel":"V30M","./env/data":"xNqU","./helpers/spread":"X8jb","./helpers/isAxiosError":"wICU"}],"dZBD":[function(require,module,exports) {
 module.exports=require("./lib/axios");
 },{"./lib/axios":"nUiQ"}],"fDSX":[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.axiosPicture=void 0;var e=t(require("axios"));function t(e){return e&&e.__esModule?e:{default:e}}const a="25715337-58cde3c0d1b1902de73779f35",o=async t=>{return(await e.default.get(`https://pixabay.com/api/?key=${a}&q=${t}&image_type=photo&orientation=horizontal&safesearch=true`)).data};exports.axiosPicture=o;
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.axiosPicture=void 0;var e=t(require("axios"));function t(e){return e&&e.__esModule?e:{default:e}}const a="25715337-58cde3c0d1b1902de73779f35",r=async t=>{return(await e.default.get(`https://pixabay.com/api/?key=${a}&q=${t}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40`)).data};exports.axiosPicture=r;
 },{"axios":"dZBD"}],"VyiV":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.refs=void 0;const e={formRef:document.querySelector(".search-form"),gallery:document.querySelector(".gallery"),btnLoadMore:document.querySelector(".load-more")};exports.refs=e;
 },{}],"yx6k":[function(require,module,exports) {
@@ -78,4 +78,4 @@ var t=arguments[3];function e(t){return(e="function"==typeof Symbol&&"symbol"==t
 },{"notiflix/build/notiflix-notify-aio":"MeeU","./refs":"VyiV","simplelightbox":"yx6k","simplelightbox/dist/simple-lightbox.min.css":"amqR"}],"Focm":[function(require,module,exports) {
 "use strict";require("./css/style.css");var e=require("notiflix/build/notiflix-notify-aio"),r=require("./js/axiosPicture"),i=require("./js/renderPicture"),s=require("./js/refs");function t(t){t.preventDefault();const u=t.currentTarget.elements.searchQuery.value.trim();s.refs.btnLoadMore.classList.remove("is-hidden"),(0,r.axiosPicture)(u).then(r=>{r&&e.Notify.success(`Hooray! We found ${r.totalHits} images.`),(0,i.renderPicture)(r)})}s.refs.formRef.addEventListener("submit",t);
 },{"./css/style.css":"amqR","notiflix/build/notiflix-notify-aio":"MeeU","./js/axiosPicture":"fDSX","./js/renderPicture":"x8wx","./js/refs":"VyiV"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-11/src.5d9f36af.js.map
+//# sourceMappingURL=/goit-js-hw-11/src.2f6168db.js.map
