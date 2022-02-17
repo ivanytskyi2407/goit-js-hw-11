@@ -9,13 +9,14 @@ const pixabayAPI = new NewPixabayAPI();
 
 refs.formRef.addEventListener('submit', onInputSearch);
 refs.btnLoadMore.addEventListener('click', onLoadMore);
-console.log(refs.btnLoadMore.style);
 function onInputSearch(event) {
   event.preventDefault();
   pixabayAPI.query = event.currentTarget.elements.searchQuery.value.trim();
   pixabayAPI.resetPage();
+  if (pixabayAPI.query === '') {
+    return;
+  }
   cleanRender();
-
   if (cleanRender) {
     refs.btnLoadMore.style.display = 'none';
   }
