@@ -20,18 +20,16 @@ function onInputSearch(event) {
   if (cleanRender) {
     refs.btnLoadMore.style.display = 'none';
   }
-  setTimeout(() => {
-    refs.btnLoadMore.style.display = 'block';
-  }, 1000);
-
   // Render
   pixabayAPI.axiosPicture(pixabayAPI.query).then(pictures => {
-    if (pictures.hits.length === 0) {
+    if (pictures.hits.length < 1) {
       Notify.failure('Sorry, there are no images matching your search query. Please try again.');
     } else if (pictures.hits.length >= 1) {
       Notify.success(`Hooray! We found ${pictures.totalHits} images.`);
+      refs.btnLoadMore.style.display = 'block';
     }
     renderPicture(pictures);
+    setTimeout(() => {}, 1000);
   });
 }
 // loadMore
