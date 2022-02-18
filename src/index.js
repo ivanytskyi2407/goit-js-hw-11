@@ -28,6 +28,9 @@ function onInputSearch(event) {
       Notify.success(`Hooray! We found ${pictures.totalHits} images.`);
       refs.btnLoadMore.style.display = 'block';
     }
+    if (pictures.hits.length < 40) {
+      refs.btnLoadMore.style.display = 'none';
+    }
     renderPicture(pictures);
   });
 }
@@ -36,7 +39,7 @@ async function onLoadMore() {
   try {
     await pixabayAPI.axiosPicture(pixabayAPI.query).then(pictures => {
       renderPicture(pictures);
-      if (pictures.hits.length === 0) {
+      if (pictures.hits.length < 40) {
         Notify.info("We're sorry, but you've reached the end of search results");
         refs.btnLoadMore.style.display = 'none';
       }
