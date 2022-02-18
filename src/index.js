@@ -29,7 +29,6 @@ function onInputSearch(event) {
       refs.btnLoadMore.style.display = 'block';
     }
     renderPicture(pictures);
-    setTimeout(() => {}, 1000);
   });
 }
 // loadMore
