@@ -4,6 +4,7 @@ import { renderPicture } from './js/renderPicture';
 import { refs } from './js/refs';
 import NewPixabayAPI from './js/pixabayAPI';
 import { cleanRender } from './js/cleanRender';
+import { smoothScroll } from './js/smoothScroll';
 
 const pixabayAPI = new NewPixabayAPI();
 
@@ -40,9 +41,12 @@ async function onLoadMore() {
     await pixabayAPI.axiosPicture(pixabayAPI.query).then(pictures => {
       renderPicture(pictures);
       if (pictures.hits.length < 40) {
-        Notify.info("We're sorry, but you've reached the end of search results");
+        setTimeout(() => {
+          Notify.info("We're sorry, but you've reached the end of search results");
+        }, 1000);
         refs.btnLoadMore.style.display = 'none';
       }
+      smoothScroll();
     });
   } catch (error) {
     return;
