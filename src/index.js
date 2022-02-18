@@ -49,6 +49,6 @@ async function onLoadMore() {
       smoothScroll();
     });
   } catch (error) {
-    return;
+    console.log(error);
   }
 }
